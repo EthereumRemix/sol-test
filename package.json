@@ -1,0 +1,28 @@
+{
+  "name": "sut-action",
+  "version": "1.0.0",
+  "description": "Solidity Unit Tests Action enables you to run unit tests for solidity contracts.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthereumRemix/sut-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EthereumRemix/sut-action/issues"
+  },
+  "homepage": "https://github.com/EthereumRemix/sut-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.5"
+  }
+}
