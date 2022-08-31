@@ -1,5 +1,5 @@
 {
-  "name": "sut-action",
+  "name": "sol-test",
   "version": "1.0.0",
   "description": "Solidity Unit Tests Action enables you to run unit tests for solidity contracts.",
   "main": "dist/index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EthereumRemix/sut-action.git"
+    "url": "git+https://github.com/EthereumRemix/sol-test.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EthereumRemix/sut-action/issues"
+    "url": "https://github.com/EthereumRemix/sol-test/issues"
   },
-  "homepage": "https://github.com/EthereumRemix/sut-action#readme",
+  "homepage": "https://github.com/EthereumRemix/sol-test#readme",
   "dependencies": {
     "@actions/core": "^1.9.0",
     "@actions/exec": "^1.1.1"
