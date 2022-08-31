@@ -15,5 +15,5 @@ runs:
   main: 'dist/index.js'
 
 branding:
-  icon: 'award'  
-  color: 'check-circle'
+  icon: 'check-circle'  
+  color: 'green'
