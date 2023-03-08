@@ -8,7 +8,7 @@ async function execute () {
   const testPath = core.getInput('test-path')
   const compilerVersion = core.getInput('compiler-version')
   const evmVersion = core.getInput('evm-version') as EVMVersion || ''
-  const runs = core.getInput('optimizer-runs') || '0'
+  const runs = core.getInput('optimizer-runs')
   const optimize = core.getBooleanInput('optimize')
   const hardFork = core.getInput('hard-fork')
   const nodeUrl = core.getInput('node-url')
@@ -35,15 +35,15 @@ async function execute () {
 
 
   await core.group("Run tests", async () => {
-    await cli.exec('remix-tests', [
-      '--compiler', compilerVersion,
-      '--evm', evmVersion,
-      '--optimize', optimize.toString(),
-      '--runs', runs,
-      '--fork', hardFork,
-      '--nodeUrl', nodeUrl,
-      '--blockNumber', blockNumber,
-      testPath])
+    const compilerArgs = compilerVersion ? ['--compiler', compilerVersion] : []
+    const evmArgs = evmVersion ? ['--evm', evmVersion] : []
+    const optimizeArgs = optimize ? ['--optimize', optimize.toString()] : []
+    const runsArgs = runs ? ['--runs', runs] : []
+    const hardForkArgs = hardFork ? ['--fork', hardFork] : []
+    const nodeUrlArgs = nodeUrl ? ['--nodeUrl', nodeUrl] : []
+    const blockNumberArgs = blockNumber ? ['--blockNumber', blockNumber] : []
+
+    await cli.exec('remix-tests', [...compilerArgs, ...evmArgs, ...optimizeArgs, ...runsArgs, ...hardForkArgs, ...nodeUrlArgs, ...blockNumberArgs, testPath])
   })
 }
 

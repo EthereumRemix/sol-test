@@ -58,6 +58,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core = __importStar(require("@actions/core"));
 var cli = __importStar(require("@actions/exec"));
@@ -73,7 +82,7 @@ function execute() {
                     testPath = core.getInput('test-path');
                     compilerVersion = core.getInput('compiler-version');
                     evmVersion = core.getInput('evm-version') || '';
-                    runs = core.getInput('optimizer-runs') || '0';
+                    runs = core.getInput('optimizer-runs');
                     optimize = core.getBooleanInput('optimize');
                     hardFork = core.getInput('hard-fork');
                     nodeUrl = core.getInput('node-url');
@@ -116,18 +125,18 @@ function execute() {
                 case 2:
                     _a.sent();
                     return [4 /*yield*/, core.group("Run tests", function () { return __awaiter(_this, void 0, void 0, function () {
+                            var compilerArgs, evmArgs, optimizeArgs, runsArgs, hardForkArgs, nodeUrlArgs, blockNumberArgs;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
-                                    case 0: return [4 /*yield*/, cli.exec('remix-tests', [
-                                            '--compiler', compilerVersion,
-                                            '--evm', evmVersion,
-                                            '--optimize', optimize.toString(),
-                                            '--runs', runs,
-                                            '--fork', hardFork,
-                                            '--nodeUrl', nodeUrl,
-                                            '--blockNumber', blockNumber,
-                                            testPath
-                                        ])];
+                                    case 0:
+                                        compilerArgs = compilerVersion ? ['--compiler', compilerVersion] : [];
+                                        evmArgs = evmVersion ? ['--evm', evmVersion] : [];
+                                        optimizeArgs = optimize ? ['--optimize', optimize.toString()] : [];
+                                        runsArgs = runs ? ['--runs', runs] : [];
+                                        hardForkArgs = hardFork ? ['--fork', hardFork] : [];
+                                        nodeUrlArgs = nodeUrl ? ['--nodeUrl', nodeUrl] : [];
+                                        blockNumberArgs = blockNumber ? ['--blockNumber', blockNumber] : [];
+                                        return [4 /*yield*/, cli.exec('remix-tests', __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], compilerArgs, true), evmArgs, true), optimizeArgs, true), runsArgs, true), hardForkArgs, true), nodeUrlArgs, true), blockNumberArgs, true), [testPath], false))];
                                     case 1:
                                         _a.sent();
                                         return [2 /*return*/];
