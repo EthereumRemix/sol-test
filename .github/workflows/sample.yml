@@ -12,8 +12,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14.17.6
-      - name: Run SUT Action
-        uses: EthereumRemix/sol-test@v1
+      - name: Run SUT action with default provider
+        uses: EthereumRemix/sol-test@v1.1.0-dev
+        with:
+          test-path: 'sample/tests'
+          compiler-version: '0.8.15'
+      - name: Run SUT Action with custom fork
+        uses: EthereumRemix/sol-test@v1.1.0-dev
         with:
           test-path: 'sample/tests'
           compiler-version: '0.8.15'
