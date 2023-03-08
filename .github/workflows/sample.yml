@@ -13,12 +13,14 @@ jobs:
         with:
           node-version: 14.17.6
       - name: Run SUT action with default provider
-        uses: EthereumRemix/sol-test@v1.1.6-dev
+        uses: EthereumRemix/sol-test@v1.1.7-dev
         with:
           test-path: 'sample/tests/Ballot_test.sol'
           compiler-version: '0.8.15'
       - name: Run SUT Action with custom fork
-        uses: EthereumRemix/sol-test@v1.1.6-dev
+        uses: EthereumRemix/sol-test@v1.1.7-dev
         with:
           test-path: 'sample/tests/custom/hardFork_test.sol'
           compiler-version: '0.8.17'
+          hard-fork: 'merge'
+          node-url: 'https://rpc.archivenode.io/e50zmkroshle2e2e50zm0044i7ao04ym'
