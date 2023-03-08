@@ -15,7 +15,7 @@ jobs:
       - name: Run SUT action with default provider
         uses: EthereumRemix/sol-test@v1.1.1-dev
         with:
-          test-path: 'sample/tests'
+          test-path: 'sample/tests/Ballot_test.sol'
           compiler-version: '0.8.15'
       - name: Run SUT Action with custom fork
         uses: EthereumRemix/sol-test@v1.1.1-dev
