@@ -5,7 +5,7 @@ import "remix_tests.sol"; // this import is automatically injected by Remix.
 import "hardhat/console.sol";
 import "../../contracts/custom/mainnet_ens.sol";
 
-contract BallotTest {
+contract ENSResolverTest {
     MyResolver ensResolver;
 
     function testResolvedAddress () public {
