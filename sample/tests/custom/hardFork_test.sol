@@ -6,10 +6,9 @@ import "hardhat/console.sol";
 import "../../contracts/custom/mainnet_ens.sol";
 
 contract ENSResolverTest {
-    MyResolver ensResolver;
-
     function testResolvedAddress () public {
         console.log("Running ens address resolve for vitalik.eth");
+        MyResolver ensResolver = new MyResolver();
         Assert.equal(ensResolver.resolve(), 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045, "Resolved incorrect address");
     }
 }
