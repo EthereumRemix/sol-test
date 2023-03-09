@@ -1,0 +1,61 @@
+{
+  "name": "@remix-project/remix-solidity",
+  "version": "0.5.10",
+  "description": "Tool to load and run Solidity compiler",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "contributors": [
+    {
+      "name": "Yann Levreau",
+      "email": "yann@ethdev.com"
+    },
+    {
+      "name": "Liana Husikyan",
+      "email": "liana@ethdev.com"
+    }
+  ],
+  "dependencies": {
+    "@ethereumjs/block": "^4.1.0",
+    "@ethereumjs/tx": "^4.0.2",
+    "@ethereumjs/util": "^8.0.3",
+    "@ethereumjs/vm": "^6.3.0",
+    "@remix-project/remix-lib": "^0.5.24",
+    "async": "^2.6.2",
+    "eslint-scope": "^5.0.0",
+    "ethers": "^5.4.2",
+    "ethjs-util": "^0.1.6",
+    "minixhr": "^3.2.2",
+    "semver": "^6.3.0",
+    "solc": "^0.7.4",
+    "string-similarity": "^4.0.4",
+    "web3": "^1.5.1",
+    "webworkify-webpack": "^2.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-es2015": "latest",
+    "@babel/preset-es2017": "latest",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@types/node": "^13.1.1",
+    "babel-eslint": "^10.0.0",
+    "babelify": "^10.0.0",
+    "typescript": "^3.7.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethereum/remix-project.git"
+  },
+  "author": "Remix Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethereum/remix-project/issues"
+  },
+  "homepage": "https://github.com/ethereum/remix-project/tree/master/libs/remix-solidity#readme",
+  "typings": "src/index.d.ts",
+  "gitHead": "c1415e0c3751af8bf53292d67fedf68e15bf3b23"
+}

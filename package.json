@@ -4,7 +4,7 @@
   "description": "Solidity Unit Tests Action enables you to run unit tests for solidity contracts.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,8 @@
     "@actions/exec": "^1.1.1"
   },
   "devDependencies": {
-    "@types/node": "^18.6.5"
+    "@remix-project/remix-solidity": "^0.5.10",
+    "@types/node": "^18.6.5",
+    "typescript": "^4.9.5"
   }
 }

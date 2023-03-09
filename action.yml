@@ -6,6 +6,26 @@ inputs:
     required: true
   compiler-version:
     description: 'set compiler version (e.g: 0.6.1, 0.7.1 etc)'
+  evm-version:
+    description: 'set evm version (e.g: istanbul, berlin etc)'
+    required: false
+  optimize:
+    description: 'set optimize (e.g: true, false)'
+    required: false
+    default: 'false'
+  optimizer-runs:
+    description: 'set optimizer runs (e.g: 200)'
+    required: false
+  node-url:
+    description: 'set node url (e.g: https://mainnet.infura.io/v3/your-api-key)'
+    required: false
+  block-number:
+    description: 'set block number (e.g: 123456)'
+    required: false
+    default: 'latest'
+  hard-fork:
+    description: 'set hard fork (e.g: istanbul, berlin etc. See full list of hard forks here: https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/common/src/hardforks)'
+    required: false
   
 outputs:
   time: # id of output
