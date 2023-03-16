@@ -101,20 +101,20 @@ function execute() {
                                         packageLock = path.join(workingDirectory, 'package-lock.json');
                                         isNPMrepo = fs.existsSync(packageLock);
                                         if (!isYarnRepo) return [3 /*break*/, 2];
-                                        return [4 /*yield*/, cli.exec('yarn', ['global', 'add', '@remix-project/remix-tests@0.2.25-alpha.15'])];
+                                        return [4 /*yield*/, cli.exec('yarn', ['global', 'add', '@remix-project/remix-tests'])];
                                     case 1:
                                         _a.sent();
                                         return [3 /*break*/, 7];
                                     case 2:
                                         if (!isNPMrepo) return [3 /*break*/, 4];
-                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests@0.2.25-alpha.15', '-g'])];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
                                     case 3:
                                         _a.sent();
                                         return [3 /*break*/, 7];
                                     case 4: return [4 /*yield*/, cli.exec('npm', ['init', '-y'])];
                                     case 5:
                                         _a.sent();
-                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests@0.2.25-alpha.15', '-g'])];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
                                     case 6:
                                         _a.sent();
                                         _a.label = 7;
