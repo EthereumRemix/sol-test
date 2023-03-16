@@ -19,16 +19,23 @@ jobs:
     name: A job to run sample solidity tests
     steps:
       - name: Checkout
-         uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Environment Setup
-         uses: actions/setup-node@v3
-         with:
-             node-version: 14.17.6
-      - name: Run SUT Action
-        uses: EthereumRemix/sol-test@v1
+        uses: actions/setup-node@v3
         with:
-            test-path: 'sample/tests'
-            compiler-version: '0.8.15'
+          node-version: 14.17.6
+      - name: Run SUT action with default provider
+        uses: EthereumRemix/sol-test@v1.1
+        with:
+          test-path: 'sample/tests/Ballot_test.sol'
+          compiler-version: '0.8.15'
+      - name: Run SUT Action with custom fork
+        uses: EthereumRemix/sol-test@v1.1
+        with:
+          test-path: 'sample/tests/custom/hardFork_test.sol'
+          compiler-version: '0.8.17'
+          hard-fork: 'merge'
+          node-url: 'https://mainnet.infura.io/v3/08b2a484451e4635a28b3d8234f24332'
 ```
 
 
