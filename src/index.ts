@@ -24,12 +24,12 @@ async function execute () {
     const isNPMrepo = fs.existsSync(packageLock)
 
     if (isYarnRepo) {
-      await cli.exec('yarn', ['global', 'add', 'rlp', '@remix-project/remix-tests@0.2.25-alpha.17'])
+      await cli.exec('yarn', ['global', 'add', 'rlp', '@remix-project/remix-tests'])
     } else if (isNPMrepo) {
-      await cli.exec('npm', ['install', 'rlp', '@remix-project/remix-tests@0.2.25-alpha.17', '-g'])
+      await cli.exec('npm', ['install', 'rlp', '@remix-project/remix-tests', '-g'])
     } else {
       await cli.exec('npm', ['init', '-y'])
-      await cli.exec('npm', ['install', 'rlp', '@remix-project/remix-tests@0.2.25-alpha.17', '-g'])
+      await cli.exec('npm', ['install', 'rlp', '@remix-project/remix-tests', '-g'])
     }
   })
 
