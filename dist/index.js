@@ -100,25 +100,34 @@ function execute() {
                                         isYarnRepo = fs.existsSync(yarnLock);
                                         packageLock = path.join(workingDirectory, 'package-lock.json');
                                         isNPMrepo = fs.existsSync(packageLock);
-                                        if (!isYarnRepo) return [3 /*break*/, 2];
-                                        return [4 /*yield*/, cli.exec('yarn', ['global', 'add', 'rlp', 'crypto', '@remix-project/remix-tests'])];
+                                        if (!isYarnRepo) return [3 /*break*/, 3];
+                                        return [4 /*yield*/, cli.exec('yarn', ['global', 'add', '@remix-project/remix-tests'])];
                                     case 1:
                                         _a.sent();
-                                        return [3 /*break*/, 7];
+                                        return [4 /*yield*/, cli.exec('yarn', ['add', 'rlp', 'crypto'])];
                                     case 2:
-                                        if (!isNPMrepo) return [3 /*break*/, 4];
-                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto', '@remix-project/remix-tests', '-g'])];
-                                    case 3:
                                         _a.sent();
-                                        return [3 /*break*/, 7];
-                                    case 4: return [4 /*yield*/, cli.exec('npm', ['init', '-y'])];
+                                        return [3 /*break*/, 10];
+                                    case 3:
+                                        if (!isNPMrepo) return [3 /*break*/, 6];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
+                                    case 4:
+                                        _a.sent();
+                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto'])];
                                     case 5:
                                         _a.sent();
-                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto', '@remix-project/remix-tests', '-g'])];
-                                    case 6:
+                                        return [3 /*break*/, 10];
+                                    case 6: return [4 /*yield*/, cli.exec('npm', ['init', '-y'])];
+                                    case 7:
                                         _a.sent();
-                                        _a.label = 7;
-                                    case 7: return [2 /*return*/];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
+                                    case 8:
+                                        _a.sent();
+                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto'])];
+                                    case 9:
+                                        _a.sent();
+                                        _a.label = 10;
+                                    case 10: return [2 /*return*/];
                                 }
                             });
                         }); })];

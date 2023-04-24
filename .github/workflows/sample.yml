@@ -18,7 +18,7 @@ jobs:
           test-path: 'sample/tests/Ballot_test.sol'
           compiler-version: '0.8.15'
       - name: Run SUT Action with custom fork
-        uses: EthereumRemix/sol-test@v1.3.0-dev
+        uses: EthereumRemix/sol-test@v1.3.1-dev
         with:
           test-path: 'sample/tests/custom/hardFork_test.sol'
           compiler-version: '0.8.17'
