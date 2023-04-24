@@ -25,14 +25,14 @@ async function execute () {
 
     if (isYarnRepo) {
       await cli.exec('yarn', ['global', 'add', '@remix-project/remix-tests'])
-      await cli.exec('yarn', ['add', 'rlp', 'crypto'])
+      await cli.exec('yarn', ['add', 'rlp'])
     } else if (isNPMrepo) {
       await cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])
-      await cli.exec('npm', ['install', 'rlp', 'crypto'])
+      await cli.exec('npm', ['install', 'rlp'])
     } else {
       await cli.exec('npm', ['init', '-y'])
       await cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])
-      await cli.exec('npm', ['install', 'rlp', 'crypto'])
+      await cli.exec('npm', ['install', 'rlp'])
     }
   })
 

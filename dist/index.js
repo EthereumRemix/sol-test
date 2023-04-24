@@ -104,7 +104,7 @@ function execute() {
                                         return [4 /*yield*/, cli.exec('yarn', ['global', 'add', '@remix-project/remix-tests'])];
                                     case 1:
                                         _a.sent();
-                                        return [4 /*yield*/, cli.exec('yarn', ['add', 'rlp', 'crypto'])];
+                                        return [4 /*yield*/, cli.exec('yarn', ['add', 'rlp'])];
                                     case 2:
                                         _a.sent();
                                         return [3 /*break*/, 10];
@@ -113,7 +113,7 @@ function execute() {
                                         return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
                                     case 4:
                                         _a.sent();
-                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto'])];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp'])];
                                     case 5:
                                         _a.sent();
                                         return [3 /*break*/, 10];
@@ -123,7 +123,7 @@ function execute() {
                                         return [4 /*yield*/, cli.exec('npm', ['install', '@remix-project/remix-tests', '-g'])];
                                     case 8:
                                         _a.sent();
-                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp', 'crypto'])];
+                                        return [4 /*yield*/, cli.exec('npm', ['install', 'rlp'])];
                                     case 9:
                                         _a.sent();
                                         _a.label = 10;
